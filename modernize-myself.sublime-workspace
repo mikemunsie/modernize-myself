@@ -312,83 +312,12 @@
 	"buffers":
 	[
 		{
-			"file": "gulpfile.js",
+			"contents": "Corona config deploy and a rolling restart\n\nVOP Hungary hu_hu www.adunkavelemenyere.hu\nVOP Czech Republic cs_cz www.cennenazory.cz\n\n\n\n\n,[\"www.adunkavelemenyere.hu\", \"vop3\", \"21\", \"hu_hu\", \"live\", \"//flare.adunkavelemenyere.hu/api/1/\", \"//flare.adunkavelemenyere.hu/proxy.html\", \".adunkavelemenyere.hu\"],[\"www2.adunkavelemenyere.hu\", \"vop3\", \"21\", \"hu_hu\", \"live\", \"//flare.adunkavelemenyere.hu/api/1/\", \"//flare.adunkavelemenyere.hu/proxy.html\", \".adunkavelemenyere.hu\"],[\"www.cennenazory.cz\", \"vop3\", \"18\", \"cs_cz\", \"live\", \"//flare.cennenazory.cz/api/1/\", \"//flare.cennenazory.cz/proxy.html\", \".cennenazory.cz\"],[\"www2.cennenazory.cz\", \"vop3\", \"18\", \"cs_cz\", \"live\", \"//flare.cennenazory.cz/api/1/\", \"//flare.cennenazory.cz/proxy.html\", \".cennenazory.cz\"]'\n\nhost_to_blueprint_mapping: '[\"nova.researchnow.com\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.researchnow.com/api/1/\", \"//flare.researchnow.com/proxy.html\", \".researchnow.com\"],[\"www.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"],[\"www2.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"],[\"nova.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"], [\"www.valuedopinions.co.za\", \"vop3\", \"36\", \"en_za\", \"live\", \"//flare.valuedopinions.co.za/api/1/\", \"//flare.valuedopinions.co.za/proxy.html\", \".valuedopinions.co.za\"],[\"www2.polytimesgnomes.gr\", \"vop3\", \"19\", \"el_gr\", \"live\", \"//flare.polytimesgnomes.gr/api/1/\", \"//flare.polytimesgnomes.gr/proxy.html\", \".polytimesgnomes.gr\"],[\"www.polytimesgnomes.gr\", \"vop3\", \"19\", \"el_gr\", \"live\", \"//flare.polytimesgnomes.gr/api/1/\", \"//flare.polytimesgnomes.gr/proxy.html\", \".polytimesgnomes.gr\"],[\"www.adunkavelemenyere.hu\", \"vop3\", \"21\", \"hu_hu\", \"live\", \"//flare.adunkavelemenyere.hu/api/1/\", \"//flare.adunkavelemenyere.hu/proxy.html\", \".adunkavelemenyere.hu\"],[\"www2.adunkavelemenyere.hu\", \"vop3\", \"21\", \"hu_hu\", \"live\", \"//flare.adunkavelemenyere.hu/api/1/\", \"//flare.adunkavelemenyere.hu/proxy.html\", \".adunkavelemenyere.hu\"],[\"www.cennenazory.cz\", \"vop3\", \"18\", \"cs_cz\", \"live\", \"//flare.cennenazory.cz/api/1/\", \"//flare.cennenazory.cz/proxy.html\", \".cennenazory.cz\"],[\"www2.cennenazory.cz\", \"vop3\", \"18\", \"cs_cz\", \"live\", \"//flare.cennenazory.cz/api/1/\", \"//flare.cennenazory.cz/proxy.html\", \".cennenazory.cz\"]'\n\n\n\n\n'[\"nova.researchnow.com\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.researchnow.com/api/1/\", \"//flare.researchnow.com/proxy.html\", \".researchnow.com\"],[\"www.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"],[\"www2.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"],[\"nova.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"], [\"www.valuedopinions.co.za\", \"vop3\", \"36\", \"en_za\", \"live\", \"//flare.valuedopinions.co.za/api/1/\", \"//flare.valuedopinions.co.za/proxy.html\", \".valuedopinions.co.za\"],[\"www2.polytimesgnomes.gr\", \"vop3\", \"19\", \"el_gr\", \"live\", \"//flare.polytimesgnomes.gr/api/1/\", \"//flare.polytimesgnomes.gr/proxy.html\", \".polytimesgnomes.gr\"],[\"www.polytimesgnomes.gr\", \"vop3\", \"19\", \"el_gr\", \"live\", \"//flare.polytimesgnomes.gr/api/1/\", \"//flare.polytimesgnomes.gr/proxy.html\", \".polytimesgnomes.gr\"]'\n'[\"nova.researchnow.com\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.researchnow.com/api/1/\", \"//flare.researchnow.com/proxy.html\", \".researchnow.com\"],[\"www.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"],[\"www2.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"],[\"nova.valuedopinions.co.in\", \"vop3\", \"26\", \"en_in\", \"live\", \"//flare.valuedopinions.co.in/api/1/\", \"//flare.valuedopinions.co.in/proxy.html\", \".valuedopinions.co.in\"], [\"www.valuedopinions.co.za\", \"vop3\", \"36\", \"en_za\", \"live\", \"//flare.valuedopinions.co.za/api/1/\", \"//flare.valuedopinions.co.za/proxy.html\", \".valuedopinions.co.za\"],[\"www2.polytimesgnomes.gr\", \"vop3\", \"19\", \"el_gr\", \"live\", \"//flare.polytimesgnomes.gr/api/1/\", \"//flare.polytimesgnomes.gr/proxy.html\", \".polytimesgnomes.gr\"],[\"www.polytimesgnomes.gr\", \"vop3\", \"19\", \"el_gr\", \"live\", \"//flare.polytimesgnomes.gr/api/1/\", \"//flare.polytimesgnomes.gr/proxy.html\", \".polytimesgnomes.gr\"],['",
 			"settings":
 			{
-				"buffer_size": 1730,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/app.js",
-			"settings":
-			{
-				"buffer_size": 326,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/config/koa.js",
-			"settings":
-			{
-				"buffer_size": 273,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/config/routes.js",
-			"settings":
-			{
-				"buffer_size": 578,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/views/index.html",
-			"settings":
-			{
-				"buffer_size": 85,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/views/layouts/default.html",
-			"settings":
-			{
-				"buffer_size": 163,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/api/test.js",
-			"settings":
-			{
-				"buffer_size": 440,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 1101,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server/config/config.js",
-			"settings":
-			{
-				"buffer_size": 299,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/user.ejs",
-			"settings":
-			{
-				"buffer_size": 16,
-				"line_ending": "Unix"
+				"buffer_size": 4834,
+				"line_ending": "Unix",
+				"name": "Corona config deploy and a rolling restart"
 			}
 		}
 	],
@@ -534,24 +463,34 @@
 	"expanded_folders":
 	[
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/public",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/node_modules/mongodb",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/api",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/config",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/views",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/views/layouts"
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/models"
 	],
 	"file_history":
 	[
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/gulpfile.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/app.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/config/koa.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/config/routes.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/config/mongo.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/views/layouts/default.html",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/api/test.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/modernize-myself.sublime-project",
+		"/Users/mikemunsie/Documents/Notes/mongoDb.txt",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/models/user.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/api/cool.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/config/config.js",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/conf.json",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/package.json",
+		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/views/user.ejs",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/views/index.html",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/api/index.js",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/config/config.js",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/package.json",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/public/dist/test.js",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/public/components/test.js",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/views/routes.json",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/routes.js",
-		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/modernize-myself.sublime-project",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/server/views/user.ejs",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/app.js",
 		"/Users/mikemunsie/Documents/Nova/Lab/modernize-myself/.gitignore",
@@ -658,19 +597,7 @@
 		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/models/Template.scala",
 		"/Users/mikemunsie/Documents/Nova/Repos/nova-flare/src/main/resources/db/content/V1__MetaKeywordsAndRobots.txt",
 		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/robots.scala.txt",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/layout/default/default.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/layout/default/default_empty.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/layout/default/default_nojavascript.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop2/layout/default/autoScreener.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/layout/default/autoScreener.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop1/layout/default/autoScreener.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/generic/layout/default/autoScreener.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/eri2/layout/default/autoScreener.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/airmiles/layout/default/autoScreener.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/emails/rewards/generic.scala.html",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/models/Translation.scala",
-		"/Users/mikemunsie/Desktop/tuesday-todo.txt",
-		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/auth/dashboard.scala.html"
+		"/Users/mikemunsie/Documents/Nova/Repos/nova-corona/app/views/vop3/layout/default/default.scala.html"
 	],
 	"find":
 	{
@@ -816,6 +743,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"],",
+			",,",
+			"],",
+			"'",
+			"routes",
 			"uglify",
 			"def render",
 			"render(",
@@ -938,12 +870,7 @@
 			"validated",
 			"age",
 			"compile_shared",
-			"common",
-			"shared_createAppJS",
-			"common",
-			"Translation.getGlobalTranslations(locale)",
-			"\"global",
-			"\"global\""
+			"common"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1089,814 +1016,29 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gulpfile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1730,
+						"buffer_size": 4834,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1235,
-								1235
+								85,
+								85
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 300.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "server/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 326,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								91,
-								91
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "server/config/koa.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 273,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								88,
-								88
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "server/config/routes.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 578,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								270,
-								270
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "server/views/index.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 85,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "server/views/layouts/default.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								155,
-								155
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "server/api/test.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 440,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								307,
-								307
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1101,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								726,
-								720
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 66.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "server/config/config.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 299,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								199,
-								192
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "views/user.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								16
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
+							"auto_name": "Corona config deploy and a rolling restart",
 							"bh_regions":
 							[
 								"bh_double_quote",
@@ -1961,7 +1103,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -2115,7 +1257,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 247.0,
 	"status_bar_visible": true,
 	"template_settings":

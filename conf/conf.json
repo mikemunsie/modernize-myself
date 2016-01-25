@@ -1,0 +1,6 @@
+{
+  "apiUrl": "/api",
+  "port": 9000,
+  "log": true,
+  "mongo": "mongodb://localhost/local"
+}

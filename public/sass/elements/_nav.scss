@@ -1,0 +1,48 @@
+@import "../config";
+
+.nav {
+  padding: $pad 0 $pad 0;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(#000, .5);
+  border-top: 0;
+  display: block;
+  width: 200px;
+}
+.nav__link {
+  display: block;
+  text-align: center;
+  padding: $pad 0;
+  color: #666;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  background: rgba(#fff, 0);
+  &:hover {
+    color: #666;
+    background: rgba(#22B8B7, .2);
+  }
+}
+.nav__link_active {
+  background: #22B8B7;
+  color: rgba(#fff, .98);
+  font-weight: 600;
+  &:hover {
+    background: #22B8B7;
+    color: rgba(#fff, .98);
+  }
+}
+.nav__social {
+  margin: $pad 0;
+  text-align: center;
+}
+.nav__social__link {
+  font-size: 20px;
+  margin-right: $pad;
+  opacity: .7;
+  &:hover {
+    opacity: 1;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}

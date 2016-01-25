@@ -1,0 +1,15 @@
+@import "../config";
+
+.footer { 
+  margin-top: $pad*3;
+  font-size: 14px;
+  border-top: 1px dotted #aaa;
+  padding: $pad*2 0 $pad*3 0;
+}
+.footer__socialLink {
+  font-size: 18px;
+  margin-right: $pad/2;
+  &:last-child {
+    margin-right: 0;
+  }
+}

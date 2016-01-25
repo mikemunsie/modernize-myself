@@ -1,0 +1,45 @@
+@import "../config";
+
+.form__field {
+  margin-bottom: $pad;
+  display: block;
+}
+
+.form__field__label {
+  display: block;
+  margin-bottom: $pad/2;
+}
+
+.form__field__input {
+  padding: $pad/2;
+  outline: none;
+  font-size: 15px;
+  color: #333;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  border: 3px solid transparent;
+  transition-property: all;
+  transition-duration: .5s;
+  &:hover {
+    border: 3px solid $primary-color;
+  }
+}
+
+.form__submit {
+  margin-top: $pad*2;
+  cursor: hand;
+  cursor: pointer;
+  background: $primary-color;
+  display: block;
+  color: #fff;
+  padding: $pad/2 $pad*4;
+  line-height: 30px;
+  border: 1px solid #333;
+  text-align: center;
+  font-size: 14px;
+}
+
+textarea {
+  height: 120px;
+}

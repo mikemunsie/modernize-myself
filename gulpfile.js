@@ -1,48 +1,135 @@
 // Modules
-var browserSync = require("browser-sync");
-var gulp =        require('gulp');
-var gulpif =      require("gulp-if");
-var named =       require('vinyl-named');
-var webpack =     require('webpack-stream');
-var uglify =      require('gulp-uglify');
-var nodemon =     require('gulp-nodemon');
-var gulpWatch =   require("gulp-watch");
+const _ =             require("lodash");
+const browserSync =   require("browser-sync");
+const del =           require("del");
+const gulp =          require('gulp');
+const gulpif =        require("gulp-if");
+const minifyCSS =     require("gulp-cssnano");
+const named =         require('vinyl-named');
+const plumber =       require("gulp-plumber");
+const gulpUtil =      require("gulp-util");
+const sass =          require("gulp-sass");
+const through2 =      require("through2");
+const webpack =       require("webpack");
+const webpackStream = require("webpack-stream");
+const notifier =      require("node-notifier");
+const nodemon =       require("gulp-nodemon");
+const uglify =        require("gulp-uglify");
+const gulpWatch =     require("gulp-watch");
+const sourcemaps =    require("gulp-sourcemaps");
 
 // Locals
 var devEnvironment = false;
-var devServerPort = 9000;
+const devServerPort = 9000;
 
-function compileJS() {
+function logStart(name) {
+  return gulpUtil.log(gulpUtil.colors.green("Started: " + name));
+}
+
+function logEnd(name) {
+  return gulpUtil.log(gulpUtil.colors.blue("(completed) - " + name));
+}
+
+function logError(err) {
+  gulpUtil.log(gulpUtil.colors.red(err));
+  if (devEnvironment) {
+    notifier.notify({
+      title: "Error",
+      message: err
+    });
+  }
+}
+
+function showError(msg){
+  gulpUtil.log(gulpUtil.colors.red(msg));
+}
+
+function clean() {
   return new Promise(function(resolve, reject) {
-    return gulp.src('public/components/**/*.js')
-      .pipe(named())
-      .pipe(webpack(require('./webpack.config.js')))
-      .pipe((gulpif(!devEnvironment, uglify({
-        mangle: false
-      }))))
-      .pipe(gulp.dest('public/dist/'))
-      .on('end', resolve)
+    logStart("Clean");
+    del.sync(["./public/dist"], {
+      force: true
+    });
+    resolve();
+    logEnd("Clean");
   });
 }
 
+function setupWebpack() {
+  return new Promise(function(resolve, reject) {
+    logStart("setupWebpack");
+    var compiler;
+    try {
+      var compiler = webpack(require("./webpack.config.js")(!devEnvironment));
+    } catch(e) {
+      logError(e);
+      return resolve();
+    }
+    compiler.run(function(err, stats) {
+      if (err) logError(err);
+      if (!devEnvironment) return resolve();
+      logStart("setupWebpack - Watching for changes...");
+      compiler.watch({
+        aggregateTimeout: 300,
+        poll: true 
+      }, function(err, stats) {
+        browserSync.reload();
+        if (err) {
+          logError(err);
+        }
+      });
+      resolve();
+    });
+  });
+}
+
+function compileSASS() {
+  return new Promise(function(resolve, reject) {
+    logStart("compileSASS");
+    gulp.src("./public/sass/**/*.scss")
+    .pipe(plumber(function(err){
+      logError(err.message);
+      return resolve();
+    }))
+    .pipe(gulpif(devEnvironment, sourcemaps.init()))
+    .pipe(sass({
+      onError: function(err) {
+        return logError(err.message);
+        resolve();
+      }
+    }))
+    .pipe(gulpif(devEnvironment, sourcemaps.write()))
+    .pipe(gulpif(!devEnvironment, minifyCSS({keepBreaks: false})))
+    .pipe(gulp.dest("./public/dist/stylesheets"))
+    .on("end", function() {
+      logEnd("compileSASS");
+      return resolve();
+    });
+  });
+}
+
+
 function startBrowserSync() {
   return new Promise(function(resolve, reject) {
+    logStart("startBrowserSync");
     browserSync.init({
       files: [
-        "public/dist/**/*",
+        "public/dist/**/*.css"
       ],
       browsers: ["google chrome"],
       proxy: "localhost:" + devServerPort,
       injectChanges: true
     });
+    logStart("startBrowserSync");
     return resolve();
   });
 }
 
 function startServer() {
   return new Promise(function(resolve, reject) {
+    logStart("startServer");
     var options = {
-      script: './server/app.js',
+      script: './app.js',
       execMap: {
         "js": "node --harmony"
       },
@@ -51,29 +138,59 @@ function startServer() {
         'PORT': devServerPort,
         'NODE_ENV': 'dev'
       },
-      watch: ['./server']
+      watch: [
+        'app.js',
+        'conf.json',
+        'routes.js',
+        './api',
+        './config',
+        './controllers',
+        './libs',
+        './models',
+        './views',
+        './logic'
+      ]
     };
+    logEnd("startServer");
     resolve();
     return nodemon(options);
   });
 }
 
 function watchChanges() {
+  logStart("watchChanges");
+
+  // Server Changes
   gulpWatch([
-    "./server/**/*"
+    './api/**/*',
+    './conf/**/*',
+    './controllers/**/*',
+    './libs/**/*',
+    './models/**/*',
+    './views/**/*'
   ], function() {
     browserSync.reload();
+  });
+
+  gulpWatch([
+    "public/sass/**/*.scss"
+  ], function() {
+    compileSASS();
   });
 }
 
 gulp.task('default', function() {
-  compileJS();
+  clean()
+  .then(setupWebpack)
+  .then(compileSASS);
 });
 
 gulp.task('dev', function() {
   devEnvironment = true;
-  compileJS()
-  .then(startServer)
-  .then(startBrowserSync)
-  .then(watchChanges);
+  clean()
+    .then(setupWebpack)
+    .then(compileSASS)
+    .then(startServer)
+    .then(startBrowserSync)
+    .then(watchChanges);
 });

@@ -1,0 +1,25 @@
+{% set bodyClass = 'noHeader' %}
+{% extends "layouts/default.html" %}
+{% block title %}404{% endblock %}
+{% block scripts -%}
+  <script src="/public/dist/apps/home.js"></script>
+{%- endblock %}
+
+{% block content %}
+
+  <!-- Content -->
+  <div class="content">
+    <div class="container">
+      <div class="section">
+        <h1>Not Found!</h1>
+        <p>
+          Sorry! The page you are looking does not exist.
+          <br/>
+          <a href="/">Return back to home</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

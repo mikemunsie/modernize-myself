@@ -8,10 +8,10 @@ const Comment = React.createClass({
   render: function() {
     return (
       <div className="comment">
-        <h2 className="commentAuthor">
+        <div className="commentAuthor">
           {this.props.author}
-        </h2>
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+        </div>
+        <span className="commentText" dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
     );
   }

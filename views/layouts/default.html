@@ -5,7 +5,6 @@
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="/public/dist/stylesheets/style.css" />
   <script src="/public/dist/apps/vendors.js"></script>
-  {% block scripts %}{% endblock %}
 </head>
 <body {% if bodyClass %} class="{{bodyClass}}"{% endif %}>
   {% include "elements/header.html" %}
@@ -13,5 +12,6 @@
     {% block content %}{% endblock %}
   </div>
   {% include "elements/footer.html" %}
+  {% block scripts %}{% endblock %}
 </body>
 </html>

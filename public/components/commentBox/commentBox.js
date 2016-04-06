@@ -1,3 +1,4 @@
+require("./commentBox.scss");
 const React = require('react');
 const CommentList = require("./commentList.js");
 const CommentForm = require("./commentForm.js");
@@ -10,22 +11,18 @@ const CommentBox = React.createClass({
   },
   componentDidMount: function() {
     this.setState({
-      data: window.data
+      data: this.props.data
     });
   },
   handleCommentSubmit: function(comment) {
-    comment.id = (data.length+1).toString();
-    data.push(comment);
-    this.setState({
-      data: data
-    });
-    console.log(data);
+    comment.id = (this.state.data.length+1).toString();
+    this.state.data.push(comment);
+    this.setState(this);
   },
   render: function() {
     return (
       <div className="commentBox">
-        Hello, world! I am a CommentBox.
-        <h1>Comments</h1>
+        <h1>Comments ({this.state.data.length})</h1>
         <CommentList data={this.state.data} />
         <CommentForm onCommentSubmit={this.handleCommentSubmit} />
       </div>

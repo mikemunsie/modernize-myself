@@ -18,13 +18,8 @@ app.use(mount('/public', serve(path.join(__dirname, "./public"))));
 app.use(mount('/public/vendors/font-awesome', serve(path.join(__dirname, "./node_modules/font-awesome"))));
 
 
-mongo.connect(app,config)
-  .then(routes.initApiRoutes)
-  .then(routes.initUserDefinedRoutes)
-  .then(function() {
-    app.listen(config.port);
-    console.log("Server started on port: " + config.port);
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
+//mongo.connect(app,config)
+routes.initApiRoutes();
+routes.initUserDefinedRoutes();
+app.listen(config.port);
+console.log("Server started on port: " + config.port);

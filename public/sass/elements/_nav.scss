@@ -2,7 +2,7 @@
 
 .nav {
   padding: $pad 0 $pad 0;
-  background: #fff;
+  background: #333;
   box-shadow: 0 0 10px rgba(#000, .5);
   border-top: 0;
   display: block;
@@ -16,14 +16,14 @@
   font-size: 18px;
   font-weight: 400;
   text-decoration: none;
-  background: rgba(#fff, 0);
+  background: rgba(#555, 0);
   &:hover {
     color: #666;
-    background: rgba(#22B8B7, .2);
+    background: rgba(#000, .2);
   }
 }
 .nav__link_active {
-  background: #22B8B7;
+  background: #000;
   color: rgba(#fff, .98);
   font-weight: 600;
   &:hover {

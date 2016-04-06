@@ -1,6 +1,5 @@
 // Modules
 const _ =             require("lodash");
-const browserSync =   require("browser-sync");
 const del =           require("del");
 const gulp =          require('gulp');
 const gulpif =        require("gulp-if");
@@ -10,13 +9,13 @@ const plumber =       require("gulp-plumber");
 const gulpUtil =      require("gulp-util");
 const sass =          require("gulp-sass");
 const through2 =      require("through2");
-const webpack =       require("webpack");
-const webpackStream = require("webpack-stream");
 const notifier =      require("node-notifier");
 const nodemon =       require("gulp-nodemon");
 const uglify =        require("gulp-uglify");
 const gulpWatch =     require("gulp-watch");
 const sourcemaps =    require("gulp-sourcemaps");
+const webpack =       require("webpack");
+const webpackDevServer = require("webpack-dev-server");
 
 // Locals
 var devEnvironment = false;
@@ -65,26 +64,15 @@ function setupWebpack() {
       logError(e);
       return resolve();
     }
-    compiler.run(function(err, stats) {
+    compiler.run((err, stats) => {
       if (err) logError(err);
-      if (!devEnvironment) return resolve();
-      logStart("setupWebpack - Watching for changes...");
-      compiler.watch({
-        aggregateTimeout: 300,
-        poll: true 
-      }, function(err, stats) {
-        browserSync.reload();
-        if (err) {
-          logError(err);
-        }
-      });
       resolve();
     });
   });
 }
 
 function compileSASS() {
-  return new Promise(function(resolve, reject) {
+  return new Promise((resolve, reject) => {
     logStart("compileSASS");
     gulp.src("./public/sass/**/*.scss")
     .pipe(plumber(function(err){
@@ -93,7 +81,7 @@ function compileSASS() {
     }))
     .pipe(gulpif(devEnvironment, sourcemaps.init()))
     .pipe(sass({
-      onError: function(err) {
+      onError: (err) => {
         return logError(err.message);
         resolve();
       }
@@ -109,20 +97,22 @@ function compileSASS() {
 }
 
 
-function startBrowserSync() {
-  return new Promise(function(resolve, reject) {
-    logStart("startBrowserSync");
-    browserSync.init({
-      files: [
-        "public/dist/**/*.css"
-      ],
-      browsers: ["google chrome"],
-      proxy: "localhost:" + devServerPort,
-      injectChanges: true
+function startWebpackServer() {
+  logStart("startWebpackServer");
+  try {
+    var webpackConfig = require("./webpack.config.js")(!devEnvironment);
+    var server = new webpackDevServer(webpack(webpackConfig), {
+      hot: true,
+      historyApiFallback: false,
+      proxy: {
+        "*": `http://localhost:${devServerPort}`
+      },
+      publicPath: webpackConfig.output.publicPath
     });
-    logStart("startBrowserSync");
-    return resolve();
-  });
+  } catch(e) {
+    console.log(e);
+  }
+  server.listen(3000, "localhost", function() {});
 }
 
 function startServer() {
@@ -169,7 +159,7 @@ function watchChanges() {
     './models/**/*',
     './views/**/*'
   ], function() {
-    browserSync.reload();
+    // RELOAD WEBPACK
   });
 
   gulpWatch([
@@ -188,9 +178,8 @@ gulp.task('default', function() {
 gulp.task('dev', function() {
   devEnvironment = true;
   clean()
-    .then(setupWebpack)
     .then(compileSASS)
     .then(startServer)
-    .then(startBrowserSync)
+    .then(startWebpackServer)
     .then(watchChanges);
 });

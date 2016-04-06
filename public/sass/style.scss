@@ -42,13 +42,7 @@ p {
   line-height: 30px;
   margin-bottom: $pad*2;
 }
-.blurb {
-  max-width: 800px;
-  margin: auto;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 35px;
-}
+
 .container {
   max-width: 960px;
   margin: auto;
@@ -62,7 +56,6 @@ p {
 .content {
   margin-top: $pad*3;
 }
-
 .section {
   margin-left: 250px;
   margin-right: 170px;

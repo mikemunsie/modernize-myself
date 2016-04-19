@@ -4,7 +4,7 @@ var ReactDOM = require('react-dom');
 const Result = (props) => {
   return (
     <div className="result">
-      <img src={props.image.images.original.url} />
+      <img src={props.image.images.downsized.url} />
     </div>
   )
 }

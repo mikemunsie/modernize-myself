@@ -1,5 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+const _ = require("lodash");
+const React = require('react');
+const ReactDOM = require('react-dom');
+const request = require("superagent");
 const Results = require("./results");
 
 class GiphySearch extends React.Component {
@@ -9,21 +11,27 @@ class GiphySearch extends React.Component {
       criteria: criteria ? criteria : "",
       results: []
     }
+    this.debouncedSearch = _.debounce(this.search, 400);
   }
   componentDidMount() {
     this.update()
   }
-  update() {
-    this.giphySearchCall = fetch("http://api.giphy.com/v1/gifs/search?q=" + this.refs.search.value + "&api_key=dc6zaTOxFJmzC&limit=5")
-    .then((response) => response.json())
-    .then((response) => {
+  search(criteria) {
+    if (this.giphySearchCall) this.giphySearchCall.abort();
+    this.giphySearchCall = request.get("http://api.giphy.com/v1/gifs/search?q=" + criteria + "&api_key=dc6zaTOxFJmzC&limit=5")
+    .accept('json')
+    .end((err, {body}) => {
+      this.giphySearchCall = false;
       this.setState({
-        results: response.data
+        results: body.data
       })
     })
+  }
+  update() {
     this.setState({
       criteria: this.refs.search.value
-    })
+    });
+    this.debouncedSearch(this.refs.search.value)
   }
   render(props) {
     return (

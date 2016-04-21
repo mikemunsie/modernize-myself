@@ -20,7 +20,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: $primary-color;
+  color: #abc;
   &:hover {
     color: lighten($primary-color, 20);
   }

@@ -1,15 +1,12 @@
-// Next up: See todo.js and continue tutorial on extracting presentation
+// Next up: Continue from https://egghead.io/lessons/javascript-redux-extracting-container-components-visibletodolist-addtodo
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Todo, store as TodoStore } from '../components/todo/todo';
+import { Todo } from '../components/todo/todo';
 
 const render = () => {
   ReactDOM.render(
-    <Todo
-      {...TodoStore.getState()}
-    />,
+    <Todo />,
     document.querySelector("#example")
   );
 }
-TodoStore.subscribe(render);
 render();

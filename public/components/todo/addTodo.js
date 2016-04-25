@@ -1,6 +1,8 @@
 import React from 'react';
 
-export const AddTodo = ({ onClick }) => {
+let nextTodoId = 0;
+export const AddTodo = (props, { store }) => {
+  console.log(store)
   let input;
   return (
     <div>
@@ -8,7 +10,14 @@ export const AddTodo = ({ onClick }) => {
         input = node;
       }}/>
       <button onClick={() => {
-        onClick(input.value);
+        store.dispatch({
+          type: "ADD_TODO",
+          data: {
+            text: input.value,
+            id: nextTodoId++,
+            completed: false
+          }
+        })
         input.value = "";
       }}>
         Add Todo
@@ -16,3 +25,6 @@ export const AddTodo = ({ onClick }) => {
     </div>
   )
 }
+AddTodo.contextTypes = {
+  store: React.PropTypes.object
+};

@@ -1,31 +1,26 @@
-export const todo = (state, action) => {
-  switch (action.type) {
-    case "ADD_TODO":
-      return {
-        id: action.data.id,
-        text: action.data.text,
-        completed: action.data.completed
-      }
-    case "TOGGLE_TODO":
-      if (state.id !== action.data.id) return state;
-      return {
-        ...state,
-        completed: !state.completed
-      };
-    default:
-      return state;
+let addTodo = (state, action) => [
+  ...state,
+  {
+    id: action.data.id,
+    text: action.data.text,
+    completed: action.data.completed
   }
+];
+
+let toggleTodo = (state, action) => {
+  if (state.id !== action.data.id) return state;
+  return {
+    ...state,
+    completed: !state.completed
+  };
 }
 
 export const todos = (state = [], action) => {
   switch (action.type) {
     case "ADD_TODO":
-      return [
-        ...state,
-        todo(undefined, action)
-      ];
+      return addTodo(state, action);
     case "TOGGLE_TODO":
-      return state.map(t => todo(t, action));
+      return state.map(state => toggleTodo(state, action));
     default:
       return state;
   }

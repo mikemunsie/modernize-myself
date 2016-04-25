@@ -1,7 +1,6 @@
 import React from 'react';
-import { store } from "./store";
 
-export const Link = ({
+const Link = ({
   active,
   children,
   onClick
@@ -24,6 +23,7 @@ export const Link = ({
 
 export class FilterLink extends React.Component {
   componentDidMount() {
+    const { store } = this.context;
     this.unsubscribe = store.subscribe(() =>
       this.forceUpdate()
     )
@@ -32,6 +32,7 @@ export class FilterLink extends React.Component {
     this.unsubscribe();
   }
   render() {
+    const { store } = this.context;
     const props = this.props;
     const state = store.getState();
     return (
@@ -50,4 +51,7 @@ export class FilterLink extends React.Component {
       </Link>
     )
   }
+}
+FilterLink.contextTypes = {
+  store: React.PropTypes.object
 }

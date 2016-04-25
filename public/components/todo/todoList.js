@@ -1,10 +1,19 @@
 import React from 'react';
 import * as Helpers from "./helpers";
 import { TodoItem } from "./todoItem";
-import { store } from "./store";
 
 export class VisibleTodoList extends React.Component {
+  componentDidMount() {
+    const { store } = this.context;
+    this.unsubscribe = store.subscribe(() =>
+      this.forceUpdate()
+    )
+  }
+  componentWillUnMount() {
+    this.unsubscribe();
+  }
   render() {
+    const { store } = this.context;
     const props = this.props;
     const state = store.getState();
     return (
@@ -26,6 +35,9 @@ export class VisibleTodoList extends React.Component {
       />
     )
   }
+}
+VisibleTodoList.contextTypes = {
+  store: React.PropTypes.object
 }
 
 export const TodoList = ({

@@ -1,8 +1,8 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { addTodo } from "./actions";
 
-let nextTodoId = 0;
-export const AddTodo = (props, { store }) => {
-  console.log(store)
+export let AddTodo = ({ dispatch }) => {
   let input;
   return (
     <div>
@@ -10,14 +10,7 @@ export const AddTodo = (props, { store }) => {
         input = node;
       }}/>
       <button onClick={() => {
-        store.dispatch({
-          type: "ADD_TODO",
-          data: {
-            text: input.value,
-            id: nextTodoId++,
-            completed: false
-          }
-        })
+        dispatch(addTodo(input.value));
         input.value = "";
       }}>
         Add Todo
@@ -25,6 +18,6 @@ export const AddTodo = (props, { store }) => {
     </div>
   )
 }
-AddTodo.contextTypes = {
-  store: React.PropTypes.object
-};
+
+// The default is to not subscribe to the store and send the dispatch as a prop
+AddTodo = connect()(AddTodo)

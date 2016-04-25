@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from "react-redux";
+import { setVisibilityFilter } from "./actions";
 
 const Link = ({
   active,
@@ -21,37 +23,21 @@ const Link = ({
   )
 }
 
-export class FilterLink extends React.Component {
-  componentDidMount() {
-    const { store } = this.context;
-    this.unsubscribe = store.subscribe(() =>
-      this.forceUpdate()
-    )
+export const FilterLink = connect(
+
+  // Map Dispatch to props
+  (state, props) => {
+    return {
+      active: props.filter === state.visibilityFilter
+    }
+  },
+
+  // Mapping State to props
+  (dispatch, props) => {
+    return {
+      onClick: () => {
+        dispatch(setVisibilityFilter(props.filter))
+      }
+    }
   }
-  componentWillUnMount() {
-    this.unsubscribe();
-  }
-  render() {
-    const { store } = this.context;
-    const props = this.props;
-    const state = store.getState();
-    return (
-      <Link
-        active={
-          props.filter === state.visibilityFilter
-        }
-        onClick={() =>
-          store.dispatch({
-            type: "SET_VISIBILITY_FILTER",
-            filter: props.filter
-          })
-        }
-      >
-        {props.children}
-      </Link>
-    )
-  }
-}
-FilterLink.contextTypes = {
-  store: React.PropTypes.object
-}
+)(Link)

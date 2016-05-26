@@ -21,7 +21,7 @@
           "assets",
           "target",
           "logs",
-          //"node_modules",
+          "node_modules",
           "_temp",
           "deploy",
           "project"

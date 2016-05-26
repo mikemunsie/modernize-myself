@@ -8,7 +8,7 @@ function start() {
   return new Promise(function(resolve, reject) {
     Libs.helpers.logStart("Libs.server.start");
     var options = {
-      script: './app.js',
+      script: 'server/app.js',
       execMap: {
         "js": "node --harmony"
       },

@@ -4,7 +4,7 @@ const ReactDOM = require('react-dom');
 const request = require("superagent");
 const Results = require("./results");
 
-class GiphySearch extends React.Component {
+export class GiphySearch extends React.Component {
   constructor({criteria}) {
     super();
     this.state = {
@@ -43,5 +43,3 @@ class GiphySearch extends React.Component {
     )
   }
 }
-
-module.exports = GiphySearch;

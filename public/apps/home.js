@@ -1,16 +1,13 @@
 // Next up: https://egghead.io/lessons/javascript-redux-generating-containers-with-connect-from-react-redux-visibletodolist
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import { Todo } from '../components/todo/todo';
+import { GiphySearch } from '../components/giphySearch/giphySearch';
+import { Router, Route, Link, hashHistory } from 'react-router';
 
-const render = () => {
-  ReactDOM.render(
-    <div>
-      <Todo />
-      <Todo />
-      <Todo />
-    </div>,
-    document.querySelector("#example")
-  );
-}
-render();
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={Todo} />
+    <Route path="/giphy" component={GiphySearch} />
+  </Router>
+), document.querySelector("#example"))

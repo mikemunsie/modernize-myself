@@ -1,33 +1,14 @@
-import thunkMiddleware from 'redux-thunk'
 import { Provider } from "react-redux";
-import { combineReducers, compose, createStore, applyMiddleware } from 'redux';
 import _ from "lodash";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import request from "superagent";
 
-import * as Reducers from '../../providers/giphySearch/reducers';
-import * as Actions from '../../providers/giphySearch/actions';
+import { store } from "../../logic/giphySearch/store";
 import Results from "./results";
 import { Search } from "./search";
 
 require("./giphySearch.scss");
-
-let defaultState = {
-  giphy: "isCool",
-  criteria: "Hamburger"
-}
-
-const store = createStore(
-  Reducers.search,
-  defaultState,
-  compose(
-    applyMiddleware(
-      thunkMiddleware
-    ),
-    window.devToolsExtension ? window.devToolsExtension() : undefined
-  )
-);
 
 export const GiphySearch = () => {
   return (

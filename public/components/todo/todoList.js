@@ -1,8 +1,8 @@
 import React from 'react';
-import { TodoItem } from "./todoItem";
 import { connect } from "react-redux";
-import * as Helpers from "../../providers/todoApp/helpers";
-import { toggleTodo } from "../../providers/todoApp/actions";
+import { TodoItem } from "./todoItem";
+import * as Helpers from "../../logic/todoApp/helpers";
+import { toggleTodo } from "../../logic/todoApp/actions";
 
 export const TodoList = ({
   todos,

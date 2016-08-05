@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as Actions from "../../providers/giphySearch/actions";
+import * as Actions from "../../logic/giphySearch/actions";
 
 export let SearchComponent = ({ dispatch, stateCriteria }) => {
   let criteria = stateCriteria;

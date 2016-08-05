@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { setVisibilityFilter } from "../../providers/todoApp/actions";
+import { setVisibilityFilter } from "../../logic/todoApp/actions";
 
 const Link = ({
   active,

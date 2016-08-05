@@ -1,0 +1,18 @@
+Things I like about React and Redux:
+
+- Redux Dev Tools: https://egghead.io/lessons/javascript-getting-started-with-redux-dev-tools
+  (add: createStore(combineReducers(Reducers), {}, window.devToolsExtension ? window.devToolsExtension() : undefined))
+
+- Actions: information that send data from your app to the store.
+- Action Creators are functions that create actions.
+- Reducers: How the applications state changes in response
+  - Handling actions: reducer is a pure function that takes the previous state and returns the next state
+
+pizzaApp: {
+  customers: [],
+  location: {}
+}
+
+function myApp(state = pizzaApp, action) {
+  return state;
+}

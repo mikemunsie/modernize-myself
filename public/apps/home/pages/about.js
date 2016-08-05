@@ -1,5 +1,5 @@
 import React from 'react';
-import { layout as DefaultLayout } from "../layouts/default/layout";
+import { layout as DefaultLayout } from "../../../layouts/default/layout";
 
 export let About = () => {
   return (

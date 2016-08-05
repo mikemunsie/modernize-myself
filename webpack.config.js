@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const node_modules_dir = path.resolve(__dirname, 'node_modules');
 const glob = require('glob');
+const parsePath = require('parse-filepath');
 
 module.exports = function(prodMode) {
 
@@ -33,35 +34,60 @@ module.exports = function(prodMode) {
       new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
     ];
 
-  function createEntries(pattern, extra) {
+  /**
+   * Creates the entries in the format of "dir/filename.js" format
+   * @param {object} config
+   */
+  function createEntries(config) {
     var entry = {};
     var fileName = "";
-    var files = glob.sync(pattern);
-    for (var fileIndex in files) {
-      fileName = path.parse(files[fileIndex]).name;
-      entry[fileName] = [files[fileIndex]];
+    var dir = "";
+    for (var fileIndex in config.files) {
+      dir = parsePath(config.files[fileIndex]).dirname.replace(config.base, "").substring(1);
+      fileName = dir + "/" + parsePath(config.files[fileIndex]).name;
+      entry[fileName] = [config.files[fileIndex]];
       if (!prodMode) {
         entry[fileName].unshift("webpack/hot/only-dev-server");
         entry[fileName].unshift("webpack-dev-server/client?http://localhost:3000");
       }
     }
-    Object.assign(entry, extra);
-    console.log(entry);
+    entry = _.extend(entry, config.otherEntries);
     return entry;
   }
 
-  return {
-    devtool: 'eval',
-    entry: createEntries("./public/apps/*.js", {
-      vendors: ['webpack/hot/only-dev-server', 'webpack-dev-server/client?http://localhost:3000', 'jquery','react','babel-polyfill']
-    }),
-    output: {
-      path: path.join(__dirname, "public/dist/apps"),
-      filename: "[name].js",
-      publicPath: "http://localhost:3000/public/dist/apps/"
-    },
-    module: module,
-    plugins: plugins
-  };
+  var vendors = [
+    'babel-polyfill',
+    'jquery',
+    'lodash',
+    'react',
+    'react-dom',
+    'react-redux',
+    'react-router',
+    'redux',
+    'redux-thunk',
+    'superagent'
+  ];
+  if (!prodMode) {
+    vendors.push('webpack/hot/only-dev-server');
+    vendors.push('webpack-dev-server/client?http://localhost:3000');
+  }
+  return [
+    {
+      entry: createEntries({
+        base: "./public",
+        files: glob.sync("./public/+(apps|components|layouts|libs|providers)/**/*.js"),
+        otherEntries: {
+          vendors: vendors
+        }
+      }),
+      output: {
+        path: path.join(__dirname, "public/dist"),
+        filename: "[name].js",
+        publicPath: "http://localhost:3000/public/"
+      },
+      module: module,
+      plugins: plugins
+    }
+  ];
 
 };

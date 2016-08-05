@@ -33,7 +33,7 @@ function start() {
       proxy: {
         "*": `http://localhost:${devServerPort}`
       },
-      publicPath: webpackConfig.output.publicPath
+      publicPath: "http://localhost:3000/public/dist/"
     });
   } catch(e) {
     console.log(e);

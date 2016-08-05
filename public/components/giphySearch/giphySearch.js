@@ -1,8 +1,47 @@
-const _ = require("lodash");
-const React = require('react');
-const ReactDOM = require('react-dom');
-const request = require("superagent");
-const Results = require("./results");
+import thunkMiddleware from 'redux-thunk'
+import { Provider } from "react-redux";
+import { combineReducers, compose, createStore, applyMiddleware } from 'redux';
+import _ from "lodash";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import request from "superagent";
+
+import * as Reducers from '../../providers/giphySearch/reducers';
+import * as Actions from '../../providers/giphySearch/actions';
+import Results from "./results";
+import { Search } from "./search";
+
+require("./giphySearch.scss");
+
+let defaultState = {
+  giphy: "isCool",
+  criteria: "Hamburger"
+}
+
+const store = createStore(
+  Reducers.search,
+  defaultState,
+  compose(
+    applyMiddleware(
+      thunkMiddleware
+    ),
+    window.devToolsExtension ? window.devToolsExtension() : undefined
+  )
+);
+
+export const GiphySearch = () => {
+  return (
+    <Provider store={store} >
+      <div>
+        <Search />
+      </div>
+    </Provider>
+  );
+}
+
+ /*<Results data={this.state.results} />*/
+
+/*
 
 export class GiphySearch extends React.Component {
   constructor({criteria}) {
@@ -36,6 +75,7 @@ export class GiphySearch extends React.Component {
   render(props) {
     return (
       <div className="giphySearch">
+        <h1>Giphy Search</h1>
         <label htmlFor="criteria">Search: </label>
         <input id="criteria" type="text" onChange={this.update.bind(this)} ref="search" value={this.state.criteria} />
         <Results data={this.state.results} />
@@ -43,3 +83,4 @@ export class GiphySearch extends React.Component {
     )
   }
 }
+*/

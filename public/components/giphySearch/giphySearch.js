@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import request from "superagent";
 
-import { store } from "../../logic/giphySearch/store";
+import { store } from "../../logic/rootReducer";
 import Results from "./results";
 import { Search } from "./search";
 

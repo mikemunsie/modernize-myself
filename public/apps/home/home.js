@@ -4,6 +4,7 @@ import { Router, Route, Link, hashHistory } from 'react-router';
 import { Index } from "./pages/index";
 import { About } from "./pages/about";
 import { Dashboard as AuthDashboard } from "./pages/dashboard";
+import { combineReducers, createStore } from 'redux';
 
 render((
   <Router history={hashHistory}>

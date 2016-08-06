@@ -1,11 +1,13 @@
 import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import * as GiphyReducers from "./giphySearch/reducers";
+import * as TodoReducers from "./todo/reducers";
 
 export let store = createStore(
-  combineReducers(
-    //require("./giphySearch/reducers"),
-    require("./todo/reducers")
-  ),
+  combineReducers(Object.assign(
+    GiphyReducers,
+    TodoReducers
+  )),
   {},
   compose(
     applyMiddleware(
@@ -14,13 +16,3 @@ export let store = createStore(
     window.devToolsExtension ? window.devToolsExtension() : undefined
   )
 )
-
-store.dispatch({
-  type: "ADD_TODO",
-  data: {
-    text: "What the fuck ever",
-    id: 1,
-    completed: true
-  }
-});
-console.log(store.getState())

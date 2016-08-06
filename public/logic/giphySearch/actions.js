@@ -1,3 +1,5 @@
+import request from "superagent";
+
 function search(criteria) {
   return {
     type: "SEARCH",
@@ -16,10 +18,11 @@ function receiveSearch(criteria, json) {
 export function fetchPosts(criteria) {
   return (dispatch) => {
     dispatch(search(criteria));
-    setTimeout(() => {
-      dispatch(receiveSearch(criteria, [{
-        title: "Awesome"
-      }]))
-    }, 2000)
+    request.get("http://api.giphy.com/v1/gifs/search?q=" + criteria + "&api_key=dc6zaTOxFJmzC&limit=5")
+    .accept('json')
+    .end((err, {body}) => {
+      this.giphySearchCall = false;
+      dispatch(receiveSearch(criteria, body.data));
+    });
   };
 }

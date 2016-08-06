@@ -15,7 +15,7 @@ let toggleTodo = (state, action) => {
   };
 }
 
-export const todos = (state = [], action) => {
+export const Todos = (state = [], action) => {
   switch (action.type) {
     case "ADD_TODO":
       return addTodo(state, action);
@@ -26,7 +26,7 @@ export const todos = (state = [], action) => {
   }
 }
 
-export const visibilityFilter = (state = 'SHOW_ALL', action) => {
+export const Todos_VisibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
     case "SET_VISIBILITY_FILTER":
       return action.filter;

@@ -1,31 +1,32 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import { connect } from "react-redux"
+import React from "react";
+import ReactDOM from "react-dom";
 
-const Result = (props) => {
+const Result = (props) => (
+  <div className="result">
+    <img src={props.image.images.downsized.url} />
+  </div>
+)
+
+const ResultsComponent = ({
+  data
+}) => {
+  let results = data.length > 0 ?
+    data.map((image, index) =>
+      <Result key={index} image={image} />
+    ) :
+      <div>No results found :/</div>
   return (
-    <div className="result">
-      <img src={props.image.images.downsized.url} />
+    <div className="results">
+      {results}
     </div>
   )
 }
 
-class Results extends React.Component {
-  constructor({criteria}) {
-    super();
+export const Results = connect(
+  state => {
+    return {
+      data: state.GiphySearch.posts
+    }
   }
-  render() {
-    let results = this.props.data.length > 0 ?
-      this.props.data.map((image, index) =>
-        <Result key={index} image={image} />
-      ) :
-        <div>No results found :/</div>
-
-    return (
-      <div className="results">
-        {results}
-      </div>
-    )
-  }
-}
-
-module.exports = Results;
+)(ResultsComponent)

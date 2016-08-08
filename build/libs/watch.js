@@ -20,8 +20,8 @@ function watch() {
   });
 
   gulpWatch([
-    "public/sass/**/*.scss"
+    "src/sass/**/*.scss"
   ], function() {
-    compileSASS();
+    Libs.sass.compile();
   });
 }

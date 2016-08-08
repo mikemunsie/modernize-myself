@@ -33,7 +33,7 @@ function start() {
       proxy: {
         "*": `http://localhost:${devServerPort}`
       },
-      publicPath: "http://localhost:3000/public/dist/"
+      publicPath: "http://localhost:3000/src/dist/"
     });
   } catch(e) {
     console.log(e);

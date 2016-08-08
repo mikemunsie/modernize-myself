@@ -1,0 +1,35 @@
+@import "../config";
+
+.header {
+  @include helpers_clearfix;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #000;
+  padding: $pad;
+  color: #fff;
+  right: 0;
+  border-bottom: 10px solid $primary-color;
+  .nav {
+    position: absolute;
+    left: $pad;
+    top: 0px;
+  }
+  .noHeader & {
+    height: 0;
+  }
+  a {
+    margin-right: $pad;
+  }
+}
+.header__logo {
+  position: absolute;
+  right: $pad;
+  top: 25px;
+  width: 115px;
+  height: 200px;
+  background-image: url("/src/images/logo.jpg");
+  background-size: cover;
+  box-shadow: 0 0 10px rgba(#000, .5);
+}

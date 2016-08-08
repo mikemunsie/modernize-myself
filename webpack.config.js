@@ -10,7 +10,10 @@ module.exports = function(prodMode) {
     loaders: [
       {
         test: /\.js?$/,
-        exclude: [node_modules_dir],
+        include: [
+          path.resolve(__dirname, 'src'),
+          path.resolve(__dirname, 'node_modules/react-circular-progress')
+        ],
         loaders: ["react-hot", "babel?presets[]=react,presets[]=es2015"],
       },
       {
@@ -74,16 +77,16 @@ module.exports = function(prodMode) {
   return [
     {
       entry: createEntries({
-        base: "./public",
-        files: glob.sync("./public/+(apps|components|layouts|libs|providers)/**/*.js"),
+        base: "./src",
+        files: glob.sync("./src/+(app|components|layouts|libs|providers)/**/*.js"),
         otherEntries: {
           vendors: vendors
         }
       }),
       output: {
-        path: path.join(__dirname, "public/dist"),
+        path: path.join(__dirname, "src/dist"),
         filename: "[name].js",
-        publicPath: "http://localhost:3000/public/"
+        publicPath: "http://localhost:3000/src/"
       },
       module: module,
       plugins: plugins

@@ -9,7 +9,7 @@ module.exports = {
 function compile() {
   return new Promise((resolve, reject) => {
     Libs.helpers.logStart("Libs.sass.compile");
-    gulp.src("./public/sass/**/*.scss")
+    gulp.src("./src/sass/**/*.scss")
     .pipe(plumber(function(err){
       Libs.helpers.logError(err.message);
       return resolve();
@@ -23,7 +23,7 @@ function compile() {
     }))
     .pipe(gulpif(devEnvironment, sourcemaps.write()))
     .pipe(gulpif(!devEnvironment, minifyCSS({keepBreaks: false})))
-    .pipe(gulp.dest("./public/dist/stylesheets"))
+    .pipe(gulp.dest("./src/dist/stylesheets"))
     .on("end", function() {
       Libs.helpers.logEnd("Libs.sass.compile");
       return resolve();

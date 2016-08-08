@@ -7,7 +7,7 @@ module.exports = {
 function app() {
   return new Promise(function(resolve, reject) {
     Libs.helpers.logStart("Libs.clean.app");
-    del.sync(["./public/dist"], {
+    del.sync(["./src/dist"], {
       force: true
     });
     resolve();

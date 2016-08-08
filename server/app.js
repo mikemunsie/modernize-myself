@@ -14,8 +14,8 @@ const routes = require("./libs/routes")(app, config, controllers);
 const mongo = require("./libs/mongo");
 
 // Configure some asset stuffs
-app.use(mount('/public', serve(path.join(__dirname, "../public"))));
-app.use(mount('/public/vendors/font-awesome', serve(path.join(__dirname, "../node_modules/font-awesome"))));
+app.use(mount('/src', serve(path.join(__dirname, "../src"))));
+app.use(mount('/src/vendors/font-awesome', serve(path.join(__dirname, "../node_modules/font-awesome"))));
 
 
 //mongo.connect(app,config)

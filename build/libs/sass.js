@@ -9,7 +9,7 @@ module.exports = {
 function compile() {
   return new Promise((resolve, reject) => {
     Libs.helpers.logStart("Libs.sass.compile");
-    gulp.src("./src/sass/**/*.scss")
+    gulp.src("./src/stylesheets/**/*.scss")
     .pipe(plumber(function(err){
       Libs.helpers.logError(err.message);
       return resolve();

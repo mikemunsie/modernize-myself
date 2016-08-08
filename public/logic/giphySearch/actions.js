@@ -1,16 +1,18 @@
+import { GIPHY_SEARCH, GIPHY_RECEIVE_SEARCH } from "../../constants/actions";
+
 import request from "superagent";
-import { isLoading } from "../loading/actions"
+import { isLoading } from "../loader/actions"
 
 function search(criteria) {
   return {
-    type: "SEARCH",
+    type: GIPHY_SEARCH,
     criteria
   }
 }
 
 function receiveSearch(criteria, json) {
   return {
-    type: "RECEIVE_SEARCH",
+    type: GIPHY_RECEIVE_SEARCH,
     criteria,
     posts: json
   }

@@ -1,8 +1,10 @@
+import { TODO_ADD_TODO, TODO_TOGGLE_TODO, TODO_SET_VISIBILITY_FILTER } from "../../constants/actions";
+
 let nextTodoId = 0;
 
 export const addTodo = (value) => {
   return {
-    type: "ADD_TODO",
+    type: TODO_ADD_TODO,
     data: {
       text: value,
       id: nextTodoId++,
@@ -13,7 +15,7 @@ export const addTodo = (value) => {
 
 export const toggleTodo = (id) => {
   return {
-    type: "TOGGLE_TODO",
+    type: TODO_TOGGLE_TODO,
     data: {
       id
     }
@@ -22,7 +24,7 @@ export const toggleTodo = (id) => {
 
 export const setVisibilityFilter = (filter) => {
   return {
-    type: "SET_VISIBILITY_FILTER",
+    type: TODO_SET_VISIBILITY_FILTER,
     filter: filter
   }
 };

@@ -1,3 +1,5 @@
+import { GIPHY_SEARCH, GIPHY_RECEIVE_SEARCH } from "../../constants/actions";
+
 const defaultState = {
   criteria: "",
   posts: []
@@ -5,12 +7,12 @@ const defaultState = {
 
 export const GiphySearch = (state = defaultState, action) => {
   switch (action.type) {
-    case "SEARCH":
+    case GIPHY_SEARCH:
       return {
         ...state,
         criteria: action.criteria
       };
-    case "RECEIVE_SEARCH":
+    case GIPHY_RECEIVE_SEARCH:
       return {
         ...state,
         posts: action.posts
